@@ -30,7 +30,7 @@ menu:
 
 params:
     description: "I am a sophomore studying computer science in National Yang Ming Chiao Tung University, and I am also a temporary employee in MediaTek. "
-	author: John Chan
+	author: John
     # googleAnalyticsID: G-XXXXX
     DateFormat: January 2006
     defaultTheme: light
