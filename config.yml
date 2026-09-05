@@ -1,122 +1,35 @@
 baseURL: "https://profile-johnchan.me/"
-title: CHIA-HAN(John) CHAN
+title: "CHIA-HAN (John) CHAN"
+
 theme: PaperMod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
+
 pagination:
   pagerSize: 20
 
-taxonomies:
-    tag: tags
-
-menu:
-    main:
-        - name: Books
-          url: books/
-          weight: 5 
-        - name: Papers
-          url: papers/
-          weight: 2
-        - name: Courses
-          url: courses/
-          weight: 3
-        - name: Data
-          url: data/
-          weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
-
 params:
-    description: "I am a sophomore studying computer science in National Yang Ming Chiao Tung University, and I am also a temporary employee in MediaTek. "
-    author: John
-    # googleAnalyticsID: G-XXXXX
-    DateFormat: January 2006
-    defaultTheme: light
-    hideFooter: false
-    disableThemeToggle: true
-    ShowShareButtons: false
-    ShowReadingTime: false
-    disableSpecial1stPost: true
-    disableAnchoredHeadings: true
-    ShowPostNavLinks: false
-    ShowBreadCrumbs: false
-    ShowCodeCopyButtons: true
-    ShowAllPagesInArchive: false
-    MainSections: [books, courses, papers, data]
-    ShowToc: false
-    disableScrollToTop: true
-    TocOpen: true
-    ShowWordCount: false
-    UseHugoToc: true
-    comments: false
-    math: true
-    profileMode:
-          enabled: true
-          title: CHIA-HAN(John) CHAN
-          subtitle: "I am a second-year undergraduate student studying in Computer Science at National Yang Ming Chiao Tung University, advised by Prof. Yu-Lun, Liu. In the same time, I am working at MediaTek as a temporary employee."
-          imageUrl: picture.jpeg
-          imageWidth: 160
-          imageHeight: 160
-          buttons:
-            - name: Papers
-              url: papers/
-            - name: Data
-              url: data/
-            - name: Books
-              url: books/
-            - name: Courses
-              url: courses/
-            - name: Tags
-              url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+  description: "CHIA-HAN (John) CHAN — Computer Science undergraduate at National Yang Ming Chiao Tung University."
+  author: John
 
-    socialIcons:
-        - name: CV
-          url: cv.pdf
-        - name: Email
-          url: chan.john.1027@gmail.com
-        - name: Zoom
-          url: https://www.zoom.us/my/user
-        - name: Location
-          url: location/
-        - name: Office Hours
-          url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=user
-        - name: GitHub
-          url: https://github.com/user
-        - name: YouTube
-          url: https://www.youtube.com/@user
-        - name: Substack
-          url: https://user.substack.com
-        - name: Twitter
-          url: https://x.com/user
-        - name: Bluesky
-          url: https://bsky.app/profile/user.bsky.social
+  defaultTheme: light
+  disableThemeToggle: true
 
-    assets:
-        disableScrollBarStyle: true
-    cover:
-        hiddenInList: false
-        hiddenInSingle: true
-    label:
-      text: Moritz-Maria von Igelfeld
-      icon: favicon.ico
-      iconHeight: 18
+  ShowShareButtons: false
+  ShowReadingTime: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+
+  profileMode:
+    enabled: false
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
-    highlight:
-        guessSyntax: true
-        style: autumn 
-    tableOfContents:
-        endLevel: 2
-        ordered: false
-        startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    guessSyntax: true
+    style: autumn
