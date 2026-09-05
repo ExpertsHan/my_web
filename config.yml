@@ -30,7 +30,7 @@ menu:
 
 params:
     description: "I am a sophomore studying computer science in National Yang Ming Chiao Tung University, and I am also a temporary employee in MediaTek. "
-	author: John
+    author: John
     # googleAnalyticsID: G-XXXXX
     DateFormat: January 2006
     defaultTheme: light
@@ -56,7 +56,7 @@ params:
           enabled: true
           title: CHIA-HAN(John) CHAN
           subtitle: "I am a second-year undergraduate student studying in Computer Science at National Yang Ming Chiao Tung University, advised by Prof. Yu-Lun, Liu. In the same time, I am working at MediaTek as a temporary employee."
-		  imageUrl: picture.jpeg
+          imageUrl: picture.jpeg
           imageWidth: 160
           imageHeight: 160
           buttons:
