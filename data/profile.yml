@@ -1,5 +1,4 @@
 name: "CHIA-HAN (John) CHAN"
-eyebrow: "Portfolio · 2026"
 photo: "/picture.jpeg"
 email: "chan.john.1027@gmail.com"
 
@@ -36,9 +35,9 @@ sectionLabels:
   projects: "Projects"
 
 about: |
-  I'm a second-year undergraduate student in Computer Science at **National Yang Ming Chiao Tung University**, advised by **Prof. Yu-Lun Liu**.
+  I'm a second-year undergraduate student in Computer Science at National Yang Ming Chiao Tung University, advised by Prof. Yu-Lun Liu.
 
-  My interests include **computer vision**, **generative AI**, efficient AI systems, and competitive programming.
+  My interests include computer vision, generative AI, efficient AI systems, and competitive programming.
 
 timelineFilters:
   - { label: "All", value: "all", mark: "▦" }
