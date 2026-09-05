@@ -1,0 +1,95 @@
+name: "CHIA-HAN (John) CHAN"
+eyebrow: "Portfolio · 2026"
+photo: "/picture.jpeg"
+email: "chan.john.1027@gmail.com"
+
+roles:
+  - "CS Undergraduate @ NYCU"
+  - "Undergraduate Researcher @ Computational Photography Lab"
+  - "Part-time Employee @ MediaTek"
+
+links:
+  - label: "CV"
+    mark: "CV"
+    url: "/cv.pdf"
+  - label: "LinkedIn"
+    mark: "in"
+    url: ""
+  - label: "GitHub"
+    mark: "GH"
+    url: "https://github.com/ExpertsHan"
+  - label: "Blog"
+    mark: "↗"
+    url: ""
+
+# Reorder these keys to reorder the homepage sections.
+sectionOrder:
+  - about
+  - timeline
+  - news
+  - projects
+
+sectionLabels:
+  about: "About Me"
+  timeline: "Timeline"
+  news: "News"
+  projects: "Projects"
+
+about: |
+  I'm a second-year undergraduate student in Computer Science at **National Yang Ming Chiao Tung University**, advised by **Prof. Yu-Lun Liu**.
+
+  My interests include **computer vision**, **generative AI**, efficient AI systems, and competitive programming.
+
+timelineFilters:
+  - { label: "All", value: "all", mark: "▦" }
+  - { label: "Career", value: "career", mark: "▣" }
+  - { label: "Education", value: "education", mark: "▤" }
+
+timeline:
+  - date: "2026 – Present"
+    category: "career research"
+    monogram: "CPL"
+    title: "Undergraduate Researcher"
+    organization: "Computational Photography Lab"
+    location: "National Yang Ming Chiao Tung University"
+  - date: "2026 – Present"
+    category: "career"
+    logo: "/logos/mediatek.png"
+    title: "Part-time Employee"
+    organization: "MediaTek"
+  - date: "2025 – Present"
+    category: "education"
+    logo: "/logos/nycu.png"
+    title: "B.S. in Computer Science"
+    organization: "National Yang Ming Chiao Tung University"
+
+newsFilters:
+  - { label: "All", value: "all", mark: "▦" }
+  - { label: "Career", value: "career", mark: "▣" }
+  - { label: "Research", value: "research", mark: "⌁" }
+  - { label: "Volunteer", value: "volunteer", mark: "♧" }
+
+news:
+  - date: "Sep 2026"
+    category: "research career"
+    text: "Joined Computational Photography Lab."
+  - date: "Aug 2026"
+    category: "career"
+    text: "Participated in Meichu Hackathon."
+  - date: "Jul 2026"
+    category: "volunteer"
+    text: "Served as an international volunteer in Ladakh, India."
+
+projects:
+  - title: "Aura"
+    monogram: "AU"
+    description: "An AI-assisted presentation training system that analyzes users' body language and provides actionable feedback for improving presentation performance."
+    tags: ["Computer Vision", "AI Coaching"]
+    links: []
+  - title: "AI Subsidy Copilot"
+    monogram: "AI"
+    description: "A RAG-based government-service MVP that guides citizens through AI subscription subsidy applications, combining policy retrieval, eligibility checks, AI safety education, human review, and payment tracking."
+    tags: ["RAG", "GovTech", "AI Safety"]
+    links:
+      - label: "Source"
+        url: "https://github.com/ExpertsHan/mchackathon2026"

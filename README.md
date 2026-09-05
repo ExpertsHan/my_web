@@ -1,5 +1,69 @@
 # Minimalist Hugo Template for Academic Websites
 
+## John Chan profile: editing guide
+
+The homepage is split into three layers so content changes do not require CSS or template edits:
+
+- `data/profile.yml` contains the name, roles, email, links, biography, timeline, news, projects, filter labels, and homepage section order.
+- `layouts/index.html` renders those fields as semantic HTML and Hugo templates.
+- `assets/css/extended/profile.css` contains the visual system, responsive layout, timeline, project cards, and interaction states. PaperMod automatically bundles files in `assets/css/extended/`.
+- `assets/js/profile.js` handles the Timeline and News category filters. Without JavaScript, every item remains visible.
+
+### Change profile content
+
+Edit `data/profile.yml`:
+
+- Replace empty LinkedIn and Blog URLs under `links` to show those links.
+- Reorder the keys under `sectionOrder` to reorder About, Timeline, News, and Projects.
+- Add timeline or news entries by copying an existing YAML item and changing its values.
+- Add a project screenshot to `static/projects/`, then set the project's `image` to a path such as `/projects/aura.webp` and add a useful `imageAlt`. If `image` is omitted, the original abstract placeholder is shown.
+
+Keep indentation consistent. YAML uses spaces, not tabs.
+
+### Change colors and type
+
+At the top of `assets/css/extended/profile.css`, edit the custom properties under `:root`:
+
+- `--profile-accent` and `--profile-accent-strong`: links, selected filters, and highlights.
+- `--profile-accent-soft`: pale badges and project artwork.
+- `--profile-ink` and `--profile-muted`: headings and body text.
+- `--profile-width`: desktop content width.
+- `--profile-font`: font stack. The default uses system fonts and does not make a third-party font request.
+
+### Preview locally
+
+Install Hugo Extended 0.165.0 or newer, then run:
+
+```bash
+cd my_web
+hugo server
+```
+
+Open `http://localhost:1313`. Hugo rebuilds when a file changes. Before publishing, verify the production build:
+
+```bash
+hugo --minify
+```
+
+### Publish with GitHub Pages and the custom domain
+
+The workflow in `.github/workflows/hugo.yml` builds and deploys every push to `main`. `static/CNAME` preserves the custom domain `profile-johnchan.me` in the deployed artifact.
+
+```bash
+git status
+git add -A
+git commit -m "Redesign academic profile homepage"
+git push origin main
+```
+
+Then check the repository's **Actions** tab for “Deploy Hugo site to Pages.” In **Settings → Pages**, the source should be **GitHub Actions** and the custom domain should be `profile-johnchan.me`. DNS changes can take time to propagate; ordinary code updates usually appear after the workflow completes and browser/CDN caches refresh.
+
+### Content still needed
+
+- Add the real LinkedIn and Blog URLs in `data/profile.yml`.
+- Replace project placeholders with screenshots you own or are licensed to publish.
+- Add any missing project/demo URL for Aura.
+
 This repository contains a [Hugo](https://github.com/gohugoio/hugo) template to create a personal academic website. The template uses the [PaperMod theme](https://github.com/adityatelange/hugo-PaperMod) but modifies it in various ways to be more minimalist and better suited for academic websites. The website is hosted on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
 
 ## Documentation
@@ -24,7 +88,7 @@ The website produced by the template can be viewed at https://pascalmichaillat.o
 ### On your GitHub account
 
 - The first time that you push your repository to GitHub, you need to allow GitHub Actions and GitHub Pages so the website can be built and deployed to GitHub Pages.
-- The first step is to [ask GitHub to publish the website with a GitHub Action](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow). GitHub offers a ready-made action to publish a Hugo website, called `Deploy Hugo site to Pages`. This action must be enabled in the [Pages Settings](https://github.com/pmichaillat/hugo-website/settings/pages) of your GitHub repository. You can view the workflow triggered by the action in the `.github/workflows/hugo.yml` file.
+- The first step is to [ask GitHub to publish the website with a GitHub Action](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow). GitHub offers a ready-made action to publish a Hugo website, called `Deploy Hugo site to Pages`. This action must be enabled in the [Pages Settings](https://github.com/ExpertsHan/my_web/settings/pages) of your GitHub repository. You can view the workflow triggered by the action in the `.github/workflows/hugo.yml` file.
 - Once the GitHub Actions are enabled, GitHub will build and publish the website as soon as the repository is updated.
 - If you would like to update the deployment action (for instance because it became outdated and fails to deploy the site), you can find the [most recent action on GitHub](https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml). You can place this file directly in the `.github/workflows` folder to replace the old `hugo.yml` file—but make sure to set `push: branches` to `["main"]`.
 
@@ -58,8 +122,8 @@ And here is an overview of the desktop performance:
 
 ## Software
 
-- The website is built with Hugo v0.147.2 via GitHub Actions.
-- The website was developed locally with Hugo v0.147.2 on macOS Sequoia.
+- The website is built with Hugo v0.165.0 via GitHub Actions.
+- The redesigned homepage was verified locally with Hugo v0.165.0.
 - The website was tested on the following browsers:
   - Safari 18.4 on macOS Sequoia
   - Mobile Safari on iOS 18

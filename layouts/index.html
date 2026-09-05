@@ -1,225 +1,98 @@
 {{ define "main" }}
-
+{{- $profile := hugo.Data.profile -}}
 <main class="profile-container">
-
-  <!-- Hero -->
-  <section class="hero">
-
+  <section class="hero" aria-labelledby="profile-name">
     <div class="hero-info">
-
-      <h1>CHIA-HAN (John) CHAN</h1>
-
-      <p class="role">
-        CS Undergraduate @ NYCU
-      </p>
-
-      <p class="role">
-        Undergraduate Researcher @ Computational Photography Lab
-      </p>
-
-      <p class="role">
-        Part-time Employee @ MediaTek
-      </p>
-
-      <p class="email">
-        Email:
-        <a href="mailto:chan.john.1027@gmail.com">
-          chan.john.1027@gmail.com
-        </a>
-      </p>
-
-      <div class="hero-links">
-        <a href="/cv.pdf">CV</a>
-        <a href="YOUR_LINKEDIN">LinkedIn</a>
-        <a href="https://github.com/ExpertsHan">GitHub</a>
-        <a href="YOUR_BLOG">Blog</a>
+      <p class="eyebrow">{{ $profile.eyebrow }}</p>
+      <h1 id="profile-name">{{ $profile.name }}</h1>
+      <div class="roles" aria-label="Current roles">
+        {{ range $profile.roles }}<p>{{ . }}</p>{{ end }}
       </div>
-
+      <p class="email">Email: <a href="mailto:{{ $profile.email }}">{{ $profile.email }}</a></p>
+      <nav class="hero-links" aria-label="Profile links">
+        {{ range $profile.links }}
+          {{ if .url }}
+            <a href="{{ .url }}"{{ if strings.HasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+              <span class="link-mark" aria-hidden="true">{{ .mark }}</span>{{ .label }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </nav>
     </div>
-
-    <img
-      class="profile-photo"
-      src="/picture.jpeg"
-      alt="CHIA-HAN (John) CHAN"
-    >
-
+    <div class="portrait-wrap">
+      <img class="profile-photo" src="{{ $profile.photo }}" alt="Portrait of {{ $profile.name }}" width="196" height="196">
+    </div>
   </section>
 
+  {{ range $profile.sectionOrder }}
+    {{ if eq . "about" }}
+      <section id="about" class="profile-section">
+        <h2>{{ index $profile.sectionLabels . }}</h2>
+        <div class="about-copy">{{ $profile.about | markdownify }}</div>
+      </section>
+    {{ end }}
 
-  <!-- About -->
-  <section>
-
-    <h2>About Me</h2>
-
-    <p>
-      I'm a second-year undergraduate student in Computer Science
-      at National Yang Ming Chiao Tung University, advised by
-      Prof. Yu-Lun Liu.
-    </p>
-
-    <p>
-      My interests include computer vision, generative AI,
-      efficient AI systems, and competitive programming.
-    </p>
-
-  </section>
-
-
-  <!-- Timeline -->
-  <section>
-
-    <h2>Timeline</h2>
-
-    <div class="timeline-item">
-
-      <div class="timeline-date">
-        2026 - Present
-      </div>
-
-      <img src="/logos/lab.png" class="timeline-logo">
-
-      <div>
-        <h3>Undergraduate Researcher</h3>
-        <p>
-          Computational Photography Lab<br>
-          National Yang Ming Chiao Tung University
-        </p>
-      </div>
-
-    </div>
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-date">
-        2026 - Present
-      </div>
-
-      <img src="/logos/mediatek.png" class="timeline-logo">
-
-      <div>
-        <h3>Part-time Employee</h3>
-        <p>MediaTek</p>
-      </div>
-
-    </div>
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-date">
-        2025 - Present
-      </div>
-
-      <img src="/logos/nycu.png" class="timeline-logo">
-
-      <div>
-        <h3>B.S. in Computer Science</h3>
-        <p>
-          National Yang Ming Chiao Tung University
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- News -->
-  <section>
-
-    <h2>News</h2>
-
-    <ul class="news">
-
-      <li>
-        <strong>Sep 2026:</strong>
-        Joined Computational Photography Lab.
-      </li>
-
-      <li>
-        <strong>Aug 2026:</strong>
-        Participated in Meichu Hackathon.
-      </li>
-
-      <li>
-        <strong>Jul 2026:</strong>
-        Served as an international volunteer in Ladakh, India.
-      </li>
-
-    </ul>
-
-  </section>
-
-
-  <!-- Projects -->
-  <section>
-
-    <h2>Project</h2>
-
-
-    <div class="project">
-
-      <img
-        src="/projects/aura.png"
-        class="project-image"
-      >
-
-      <div>
-
-        <h3>Aura</h3>
-
-        <p>
-          An AI-assisted presentation training system that analyzes
-          users' body language and provides actionable feedback
-          for improving presentation performance.
-        </p>
-
-        <div class="project-links">
-          <a href="#">Project</a>
-          <a href="#">Source</a>
+    {{ if eq . "timeline" }}
+      <section id="timeline" class="profile-section">
+        <h2>{{ index $profile.sectionLabels . }}</h2>
+        <div class="filters" data-filter-controls="timeline" aria-label="Filter timeline">
+          {{ range $profile.timelineFilters }}<button type="button" data-filter="{{ .value }}" aria-pressed="{{ eq .value "all" }}"><span aria-hidden="true">{{ .mark }}</span>{{ .label }}</button>{{ end }}
         </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="project">
-
-      <img
-        src="/projects/ai-subsidy.png"
-        class="project-image"
-      >
-
-      <div>
-
-        <h3>AI Subsidy Copilot</h3>
-
-        <p>
-          A RAG-based government-service MVP that guides citizens
-          through AI subscription subsidy applications, combining
-          policy retrieval, eligibility checks, AI safety education,
-          human review and payment tracking.
-        </p>
-
-        <div class="project-links">
-
-          <a
-            href="https://github.com/ExpertsHan/mchackathon2026"
-          >
-            Source
-          </a>
-
+        <div class="timeline" data-filter-list="timeline">
+          {{ range $profile.timeline }}
+            <article class="timeline-item" data-category="{{ .category }}">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <p class="timeline-date">{{ .date }}</p>
+              <div class="timeline-logo{{ if not .logo }} timeline-monogram{{ end }}">
+                {{ if .logo }}<img src="{{ .logo }}" alt="" loading="lazy" width="64" height="64">{{ else }}<span aria-hidden="true">{{ .monogram }}</span>{{ end }}
+              </div>
+              <div class="timeline-copy"><h3>{{ .title }}</h3><p>{{ .organization }}{{ with .location }}<br>{{ . }}{{ end }}</p></div>
+            </article>
+          {{ end }}
         </div>
+      </section>
+    {{ end }}
 
-      </div>
+    {{ if eq . "news" }}
+      <section id="news" class="profile-section">
+        <h2>{{ index $profile.sectionLabels . }}</h2>
+        <div class="filters" data-filter-controls="news" aria-label="Filter news">
+          {{ range $profile.newsFilters }}<button type="button" data-filter="{{ .value }}" aria-pressed="{{ eq .value "all" }}"><span aria-hidden="true">{{ .mark }}</span>{{ .label }}</button>{{ end }}
+        </div>
+        <ul class="news" data-filter-list="news">
+          {{ range $profile.news }}<li data-category="{{ .category }}"><strong>{{ .date }}:</strong> {{ .text }}</li>{{ end }}
+        </ul>
+      </section>
+    {{ end }}
 
-    </div>
-
-  </section>
-
-
+    {{ if eq . "projects" }}
+      <section id="projects" class="profile-section">
+        <h2>{{ index $profile.sectionLabels . }}</h2>
+        <div class="projects-grid">
+          {{ range $profile.projects }}
+            <article class="project">
+              {{ if .image }}
+                <img class="project-image" src="{{ .image }}" alt="{{ .imageAlt }}" loading="lazy">
+              {{ else }}
+                <div class="project-image project-placeholder" aria-hidden="true"><span>{{ .monogram }}</span></div>
+              {{ end }}
+              <div class="project-copy">
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+                {{ if .tags }}<ul class="project-tags" aria-label="Technologies">{{ range .tags }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+                <div class="project-links">
+                  {{ range .links }}{{ if .url }}<a href="{{ .url }}"{{ if strings.HasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}><span aria-hidden="true">↗</span>{{ .label }}</a>{{ end }}{{ end }}
+                </div>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <p class="filter-status" role="status" aria-live="polite"></p>
 </main>
 
+{{- $script := resources.Get "js/profile.js" | js.Build | minify | fingerprint -}}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 {{ end }}
