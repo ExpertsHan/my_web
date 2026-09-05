@@ -26,8 +26,7 @@ body, body.list { background: #fff; color: var(--profile-ink); font-family: var(
 .profile-container a:focus-visible, .profile-container button:focus-visible { outline: 3px solid color-mix(in srgb, var(--profile-accent) 35%, transparent); outline-offset: 3px; }
 
 .hero-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 14px; }
-.hero-links a { display: inline-flex; align-items: center; gap: 7px; color: var(--profile-ink); font-weight: 590; }
-.link-mark { display: inline-grid; width: 18px; height: 18px; place-items: center; border: 1px solid #8c949d; border-radius: 4px; font-size: .66rem; font-weight: 800; line-height: 1; }
+.hero-links a { color: var(--profile-ink); font-weight: 590; }
 .portrait-wrap { position: relative; padding: 8px; }
 .portrait-wrap::before { position: absolute; inset: 0; border-radius: 50%; background: linear-gradient(145deg, var(--profile-accent-soft), #eef0f2); content: ""; transform: translate(8px, 8px); }
 .profile-photo { position: relative; display: block; width: 196px; height: 196px; border: 1px solid #d4d9df; border-radius: 50%; background: var(--profile-surface); object-fit: cover; }
@@ -39,7 +38,7 @@ body, body.list { background: #fff; color: var(--profile-ink); font-family: var(
 
 .filters { display: none; flex-wrap: wrap; gap: 5px 8px; margin: -2px 0 14px; }
 .js .filters { display: flex; }
-.filters button { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 0; border-radius: 7px; background: transparent; color: #363c43; font: inherit; font-size: .9rem; font-weight: 620; cursor: pointer; transition: color 150ms ease, background 150ms ease, transform 150ms ease; }
+.filters button { padding: 7px 12px; border: 0; border-radius: 7px; background: transparent; color: #363c43; font: inherit; font-size: .9rem; font-weight: 620; cursor: pointer; transition: color 150ms ease, background 150ms ease, transform 150ms ease; }
 .filters button:hover { background: var(--profile-accent-soft); color: var(--profile-accent-strong); transform: translateY(-1px); }
 .filters button[aria-pressed="true"] { background: var(--profile-accent); color: #fff; }
 

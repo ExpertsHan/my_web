@@ -1,25 +1,19 @@
-name: "CHIA-HAN (John) CHAN"
+name: "Chia-Han (John) Chan"
 photo: "/picture.jpeg"
 email: "chan.john.1027@gmail.com"
 
 roles:
   - "CS Undergraduate @ NYCU"
   - "Undergraduate Researcher @ Computational Photography Lab"
-  - "Part-time Employee @ MediaTek"
+  - "Project Management Intern @ MediaTek"
 
 links:
   - label: "CV"
-    mark: "CV"
     url: "/cv.pdf"
   - label: "LinkedIn"
-    mark: "in"
-    url: ""
+    url: "https://www.linkedin.com/in/john-chan-2b2180373?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
   - label: "GitHub"
-    mark: "GH"
     url: "https://github.com/ExpertsHan"
-  - label: "Blog"
-    mark: "↗"
-    url: ""
 
 # Reorder these keys to reorder the homepage sections.
 sectionOrder:
@@ -40,33 +34,32 @@ about: |
   My interests include computer vision, generative AI, efficient AI systems, and competitive programming.
 
 timelineFilters:
-  - { label: "All", value: "all", mark: "▦" }
-  - { label: "Career", value: "career", mark: "▣" }
-  - { label: "Education", value: "education", mark: "▤" }
+  - { label: "All", value: "all" }
+  - { label: "Career", value: "career" }
+  - { label: "Education", value: "education" }
 
 timeline:
-  - date: "2026 – Present"
-    category: "career research"
-    monogram: "CPL"
-    title: "Undergraduate Researcher"
-    organization: "Computational Photography Lab"
-    location: "National Yang Ming Chiao Tung University"
-  - date: "2026 – Present"
+  - date: "2026 – 2027"
     category: "career"
     logo: "/logos/mediatek.png"
-    title: "Part-time Employee"
+    title: "Project Management Intern"
     organization: "MediaTek"
-  - date: "2025 – Present"
+  - date: "2025 – 2029"
     category: "education"
     logo: "/logos/nycu.png"
     title: "B.S. in Computer Science"
     organization: "National Yang Ming Chiao Tung University"
+  - date: "2022 – 2025"
+    category: "education"
+    logo: "/logos/ckhs.png"
+    title: "High School Diploma"
+    organization: "Taipei Municipal Chien Kuo High School"
 
 newsFilters:
-  - { label: "All", value: "all", mark: "▦" }
-  - { label: "Career", value: "career", mark: "▣" }
-  - { label: "Research", value: "research", mark: "⌁" }
-  - { label: "Volunteer", value: "volunteer", mark: "♧" }
+  - { label: "All", value: "all" }
+  - { label: "Career", value: "career" }
+  - { label: "Research", value: "research" }
+  - { label: "Volunteer", value: "volunteer" }
 
 news:
   - date: "Sep 2026"
@@ -83,12 +76,12 @@ projects:
   - title: "Aura"
     monogram: "AU"
     description: "An AI-assisted presentation training system that analyzes users' body language and provides actionable feedback for improving presentation performance."
-    tags: ["Computer Vision", "AI Coaching"]
+    tags: ["Computer Vision", "AI"]
     links: []
   - title: "AI Subsidy Copilot"
     monogram: "AI"
     description: "A RAG-based government-service MVP that guides citizens through AI subscription subsidy applications, combining policy retrieval, eligibility checks, AI safety education, human review, and payment tracking."
-    tags: ["RAG", "GovTech", "AI Safety"]
+    tags: ["RAG", "AI Safety"]
     links:
       - label: "Source"
         url: "https://github.com/ExpertsHan/mchackathon2026"
