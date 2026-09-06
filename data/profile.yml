@@ -4,7 +4,6 @@ email: "chan.john.1027@gmail.com"
 
 roles:
   - "CS Undergraduate @ NYCU"
-  - "Undergraduate Researcher @ Computational Photography Lab"
   - "Project Management Intern @ MediaTek"
 
 links:
@@ -20,18 +19,18 @@ sectionOrder:
   - about
   - timeline
   - news
-  - projects
+#  - projects
 
 sectionLabels:
   about: "About Me"
   timeline: "Timeline"
   news: "News"
-  projects: "Projects"
+#  projects: "Projects"
 
 about: |
-  I'm a second-year undergraduate student in Computer Science at National Yang Ming Chiao Tung University, advised by Prof. Yu-Lun Liu.
+        I am a second-year undergraduate student in Computer Science at National Yang Ming Chiao Tung University (NYCU). I am currently working as a Project Management Intern at MediaTek.
 
-  My interests include computer vision, generative AI, efficient AI systems, and competitive programming.
+        My interests include computer vision, algorithms, and competitive programming. I am also a member of the Computational Photography Lab, advised by [Prof. Yu-Lun Liu](https://yulunalexliu.github.io), where I am exploring research topics related to computer vision and computational photography.
 
 timelineFilters:
   - { label: "All", value: "all" }
@@ -58,30 +57,41 @@ timeline:
 newsFilters:
   - { label: "All", value: "all" }
   - { label: "Career", value: "career" }
-  - { label: "Research", value: "research" }
+  - { label: "Education", value: "education" }
+  - { label: "Honor", value: "honor" }
+  - { label: "International Exchange", value: "international_exchange" }
   - { label: "Volunteer", value: "volunteer" }
 
 news:
   - date: "Sep 2026"
-    category: "research career"
-    text: "Joined Computational Photography Lab."
-  - date: "Aug 2026"
-    category: "career"
-    text: "Participated in Meichu Hackathon."
+    category: "education"
+    text: "Joined **Computational Photography Lab** as an undergraduate researcher, advised by [Prof. Yu-Lun Liu](https://yulunalexliu.github.io)"
   - date: "Jul 2026"
-    category: "volunteer"
-    text: "Served as an international volunteer in Ladakh, India."
+    category: "international_exchange volunteer"
+    text: "Joined **Jullay 16** as an international volunteer in Ladakh, India"
+  - date: "May 2026"
+    category: "international_exchange"
+    text: "Joined **Ivy League AI Leadership Training Camp** as the youngest ambassador in Philadelphia, USA. Participated in Philly Tech Week events and take the AI Possibility Lab in the University of Pennsylvania"
+  - date: "Mar 2026"
+    category: "career"
+    text: "Joined **MediaTek** as the project management intern"
+  - date: "Nov 2025"
+    category: "honor"
+    text: "Received **Bronze Medal** at 2025 ICPC Asia Taichung regional contest"
+  - date: "Sep 2025"
+    category: "education"
+    text: "Started **B.S. in Computer Science** at National Yang Ming Chiao Tung University" 
 
-projects:
-  - title: "Aura"
-    monogram: "AU"
-    description: "An AI-assisted presentation training system that analyzes users' body language and provides actionable feedback for improving presentation performance."
-    tags: ["Computer Vision", "AI"]
-    links: []
-  - title: "AI Subsidy Copilot"
-    monogram: "AI"
-    description: "A RAG-based government-service MVP that guides citizens through AI subscription subsidy applications, combining policy retrieval, eligibility checks, AI safety education, human review, and payment tracking."
-    tags: ["RAG", "AI Safety"]
-    links:
-      - label: "Source"
-        url: "https://github.com/ExpertsHan/mchackathon2026"
+#projects:
+#  - title: "Aura"
+#    monogram: "AU"
+#    description: "An AI-assisted presentation training system that analyzes users' body language and provides actionable feedback for improving presentation performance."
+#    tags: ["Computer Vision", "AI"]
+#    links: []
+#  - title: "AI Subsidy Copilot"
+#    monogram: "AI"
+#    description: "A RAG-based government-service MVP that guides citizens through AI subscription subsidy applications, combining policy retrieval, eligibility checks, AI safety education, human review, and payment tracking."
+#    tags: ["RAG", "AI Safety"]
+#    links:
+#      - label: "Source"
+#        url: "https://github.com/ExpertsHan/mchackathon2026"

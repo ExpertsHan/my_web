@@ -13,7 +13,7 @@
         {{ range $profile.links }}
           {{ if .url }}
             <a href="{{ .url }}"{{ if strings.HasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
-              <span class="link-mark" aria-hidden="true">{{ .mark }}</span>{{ .label }}
+                  {{ .label }}
             </a>
           {{ end }}
         {{ end }}
@@ -46,7 +46,7 @@
               <div class="timeline-logo{{ if not .logo }} timeline-monogram{{ end }}">
                 {{ if .logo }}<img src="{{ .logo }}" alt="" loading="lazy" width="64" height="64">{{ else }}<span aria-hidden="true">{{ .monogram }}</span>{{ end }}
               </div>
-              <div class="timeline-copy"><h3>{{ .title }}</h3><p>{{ .organization }}{{ with .location }}<br>{{ . }}{{ end }}</p></div>
+              <div class="timeline-copy"><h3>{{ .title }}</h3><p>{{ .organization }}{{ with .location }}<br>{{ . | markdownify }}{{ end }}</p></div>
             </article>
           {{ end }}
         </div>
@@ -60,7 +60,7 @@
           {{ range $profile.newsFilters }}<button type="button" data-filter="{{ .value }}" aria-pressed="{{ eq .value "all" }}"><span aria-hidden="true">{{ .mark }}</span>{{ .label }}</button>{{ end }}
         </div>
         <ul class="news" data-filter-list="news">
-          {{ range $profile.news }}<li data-category="{{ .category }}"><strong>{{ .date }}:</strong> {{ .text }}</li>{{ end }}
+          {{ range $profile.news }}<li data-category="{{ .category }}"><strong>{{ .date }}:</strong> {{ .text | markdownify }}</li>{{ end }}
         </ul>
       </section>
     {{ end }}
@@ -78,7 +78,7 @@
               {{ end }}
               <div class="project-copy">
                 <h3>{{ .title }}</h3>
-                <p>{{ .description }}</p>
+                <p>{{ .description | markdownify }}</p>
                 {{ if .tags }}<ul class="project-tags" aria-label="Technologies">{{ range .tags }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
                 <div class="project-links">
                   {{ range .links }}{{ if .url }}<a href="{{ .url }}"{{ if strings.HasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}><span aria-hidden="true">↗</span>{{ .label }}</a>{{ end }}{{ end }}
