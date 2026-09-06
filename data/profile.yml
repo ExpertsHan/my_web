@@ -13,6 +13,8 @@ links:
     url: "https://www.linkedin.com/in/john-chan-2b2180373?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
   - label: "GitHub"
     url: "https://github.com/ExpertsHan"
+  - label: "Instagram"
+    url: "https://www.instagram.com/jzhan1027/"
 
 # Reorder these keys to reorder the homepage sections.
 sectionOrder:
@@ -71,7 +73,7 @@ news:
     text: "Joined **Jullay 16** as an international volunteer in Ladakh, India"
   - date: "May 2026"
     category: "international_exchange"
-    text: "Joined **Ivy League AI Leadership Training Camp** as the youngest ambassador in Philadelphia, USA. Participated in Philly Tech Week events and take the AI Possibility Lab in the University of Pennsylvania"
+    text: "Joined **Ivy League AI Leadership Training Camp** as the youngest ambassador in Philadelphia, USA. Participated in Philly Tech Week events and took the AI Possibility Lab at University of Pennsylvania"
   - date: "Mar 2026"
     category: "career"
     text: "Joined **MediaTek** as the project management intern"
